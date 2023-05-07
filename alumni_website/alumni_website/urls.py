@@ -21,8 +21,8 @@ from listings import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/',views.hello),
-    path('home/',views.home),
-    path('login/',views.login),
-    path('register/',views.register),
-    path('diploma_number/',views.diploma_number)
+    path('home/',views.home, name ='home'),
+    path('login/',views.login, name = 'login'),
+    path('register/',views.register, name = 'register'),
+    path('diploma_number/',views.diploma_number, name = 'diploma_number')
 ]
