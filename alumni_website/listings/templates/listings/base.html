@@ -1,14 +1,43 @@
 {% load static %}
-<html>
 
-<head>
-    <title>Alumni</title>
-    <link rel="stylesheet" href="{% static 'listings/styles.css' %}" />
-</head>
+<IDOCTYPE html>
+    <html lang="en">
 
-<body>
-    {% block content %}
-    {% endblock %}
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IEzedge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Website With Login & Registration Form
+            Remitly</title>
+        <link rel="stylesheet" href="{% static 'listings/style.css' %}">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-</html>
+    </head>
+
+    <body>
+        <header class="header">
+            <nav class="navbar">
+                <a href="{% url 'home'%}">Home</a>
+<!-- 
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+-->
+            </nav>
+<!-- 
+            <form action="#" class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button type="submit">
+                    <i class='bx bx-search'></i>
+                </button>
+
+            </form>
+-->
+
+        </header>
+        {% block content %}
+        {% endblock %}
+    </body>
+    <script src="{% static 'listings/script.js' %}"></script>
+
+    </html>
