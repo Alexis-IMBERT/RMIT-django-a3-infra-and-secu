@@ -111,7 +111,8 @@ transition: .5s;
         background-size: cover;
         background-position: center;
         border-radius: 20px;
-        margin-top: 80px;  
+        margin-top: 40px;  
+        
 
     }
 
@@ -146,7 +147,8 @@ transition: .5s;
         display: flex; 
         justify-content: space-between; 
         flex-direction: column;
-        }
+
+    }
 
         .social-icons a i {
         font-size: 22px; 

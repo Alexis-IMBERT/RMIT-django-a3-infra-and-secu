@@ -15,7 +15,9 @@ def hello(request):
 
 
 def home(request):
-    return render(request, "listings/home.html")
+    return render(request, "listings/home.html", {
+        "title":"Website With Login & Registration Form Remitly",
+    })
 
 
 def login_view(request):
@@ -46,3 +48,12 @@ def set_information(request):
 
 def diploma_number(request):
     return render(request, "listings/diploma_number.html")
+
+
+def terms_and_conditions(request):
+    return render(request, "listings/terms_and_conditions.html",{
+        "title":"Terms and Conditions",
+    })
+
+def service(request):
+    return render(request,"listings/service.html")
