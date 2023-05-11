@@ -1,12 +1,19 @@
 {% extends 'listings/base.html' %}
 
 {% block content %}
-        <h1>Hello Django!</h1>
-        <p>My favourite alumni are:</p>
-        <!-- TODO: list bands -->
-        <ul>
-            {% for alumni in alumnis %}
-            <li>{{ alumni.username }}</li>
-            {% endfor %}
-        </ul>
+<div style="color:white; position: absolute; top:100px;left: 100px;">
+    <h1>Hello Django!</h1>
+    {% if user.is_authenticated %}
+        Hi {{user.username}}
+    {% else %}
+        Not log in !
+    {% endif %}
+    <p>My favourite alumni are:</p>
+    <!--  list users -->
+    <ul>
+        {% for alumni in alumnis %}
+        <li>{{ alumni.username }}</li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}

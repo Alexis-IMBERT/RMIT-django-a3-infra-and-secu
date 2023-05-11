@@ -1,29 +1,43 @@
-{% extends 'listings/base.html' %}
+{% extends 'listings/home.html' %}
 
-{% block content %}
-<!-- <h2>Register</h2>
-<form method="post">
-  {% csrf_token %}
-  <table>
-    {% for field in form %}
-    <tr>
-      <td>{{ field.label_tag }}</td>
-      <td>{{ field }}</td>
-    </tr>
-    {% for error in field.errors %}
-    <tr>
-      <td></td>
-      <td class="alert alert-danger">{{ error }}</td>
-    </tr>
-    {% endfor %}
-    {% endfor %}
-  </table>
-  <button type="submit">s'inscrire</button>
-</form>
-<div>
-  <small>
-    Déjà inscrit.e?
-    <a href="{% url 'login' %}">Se connecter</a>
-  </small>
-</div> -->
+{% block authentification %}
+<!-- Register Forms -->
+<div class="logreg-box active" >
+  <div class="form-box register">
+    <form action="#" method="post" novalidate>
+      {% csrf_token %}
+      <h2>Sign Up</h2>
+
+
+      {% for field in form %}
+      <div class="input-box">
+        <span class="icon">
+          <i class='bx bxs-envelope'></i></span>
+          {{field}}
+          {{field.label_tag}}
+          {{fied.errors}}
+      </div>      
+      {% endfor %}
+
+      <div class="remember-forgot">
+        <label><input type="checkbox">
+          <a href="/terms and conditions/index.html">I agree to the terms & conditions</a>
+        </label>
+
+      </div>
+
+      <button type="submit" class="btn">
+        Sign Up
+      </button>
+
+      <div class="login-register">
+        <p>Already have an account?
+          <a href="{% url 'login' %}" class="login-link">
+            Sign in
+          </a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
 {% endblock %}
