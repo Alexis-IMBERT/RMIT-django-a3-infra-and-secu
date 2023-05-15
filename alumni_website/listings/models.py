@@ -1,12 +1,10 @@
+""" Creation of models class of the app """
 from django.db import models
 
 
-# class Alumni(models.Model):
-#     """ Alumni's class definition """
-#     username = models.fields.CharField(max_length=100)  # Username of the alumni
-#     diploma_number = models.fields.BigIntegerField()  # Number of the diploma 
-#                                                     # password will be hash in the future
-#     password = models.fields.CharField(max_length=100)
-
-#     def __str__(self):
-#         return f'{self.username}'
+# class DiplomaNumber(models.Model):
+#     """ Diploma number data base gestion """
+#     diploma_number = models.fields.IntegerField(primary_key=True)
+#     username = ...
+#     year = models.fields.IntegerField()  # Put contraint for being a year
+#     programe_name = models.fields.CharField()
