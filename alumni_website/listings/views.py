@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout, forms
 from django.contrib import messages
 
+from .forms import DiplomaNumberForm
 from .forms import UserRegisterForm
 
 
@@ -71,7 +72,8 @@ def set_information(request):
 
 
 def diploma_number(request):
-    return render(request, "listings/diploma_number.html")
+    form = DiplomaNumberForm()
+    return render(request, "listings/diploma_number.html",{'form',form})
 
 
 def terms_and_conditions(request):

@@ -1,7 +1,9 @@
 """ Creation of class forms of the app """
 from django import forms
+from django.forms import ModelForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from .models import DiplomaNumber
 
 
 class UserRegisterForm(UserCreationForm):
@@ -16,5 +18,8 @@ class UserRegisterForm(UserCreationForm):
                   'last_name', 'password1', 'password2')
 
 
-class DiplomaNumberForm():
-    pass
+class DiplomaNumberForm(ModelForm):
+    """ Form class for add a diploma number """
+    class Meta:
+        model = DiplomaNumber
+        fields = ("year","programe_name")
