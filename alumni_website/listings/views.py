@@ -79,7 +79,7 @@ def info_diploma(request):
     return render(request, "listings/diploma-info.html",{})
 
 def check_diploma(request):
-    return render(request, "listings/check_diploma.html",{})
+    return render(request, "listings/diploma-check.html",{})
 
 
 def terms_and_conditions(request):
