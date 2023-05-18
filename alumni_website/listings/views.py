@@ -73,7 +73,7 @@ def set_information(request):
 
 def add_diploma(request):
     form = DiplomaNumberForm()
-    return render(request, "listings/diploma_number.html",{'form',form})
+    return render(request, "listings/diploma-add.html",{'form',form})
 
 def info_diploma(request):
     return render(request, "listings/diploma-info.html",{})

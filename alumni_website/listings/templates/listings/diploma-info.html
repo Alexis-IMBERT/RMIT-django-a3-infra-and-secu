@@ -1,36 +1,15 @@
 {% extends 'listings/base_diploma.html' %}
 {% block content %}
-<div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg');">
+<div class="wrapper"
+	style="background-image: 'static/listings/diploma/colorlib-regform-18/images/bg-registration-form-2.jpg';">
 	<div class="inner">
-		<form action="">
-			<h3>Enter Diploma Information</h3>
-
-			<div class="form-wrapper">
-				<label for="">Program Name</label>
-				<input type="text" class="form-control">
-			</div>
-
-			<div class="form-wrapper">
-				<label for="">Year</label>
-				<input type="date" class="form-control">
-			</div>
-			<div class="form-wrapper">
-				<label for="">Phone Number</label>
-				<input type="tel" id="phone" name="phone" placeholder="Phone number" class="form-control">
-			</div>
-			<div class="form-wrapper">
-				<label for="">Diploma Number</label>
-				<input type="text" class="form-control">
-
-			</div>
-			<div class="checkbox">
-				<label>
-					<input type="checkbox"> I accept the Terms of Use & Privacy Policy.
-					<span class="checkmark"></span>
-				</label>
-			</div>
-			<button>Confirm</button>
-		</form>
+		<button>Add New Diploma</button>
+		<h1>Your Diploma</h1>
+		<ul>
+			{% for diploma in diplomas%}
+			<li>{{diploma}}</li>
+			{%endfor%}
+		</ul>
 	</div>
 </div>
 {% endblock %}
