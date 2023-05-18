@@ -1,15 +1,17 @@
 {% extends 'listings/base_diploma.html' %}
 {% block content %}
 <div class="wrapper"
-	style="background-image: 'static/listings/diploma/colorlib-regform-18/images/bg-registration-form-2.jpg';">
-	<div class="inner">
-		<button>Add New Diploma</button>
-		<h1>Your Diploma</h1>
-		<ul>
-			{% for diploma in diplomas%}
-			<li>{{diploma}}</li>
-			{%endfor%}
-		</ul>
-	</div>
+  style="background-image: 'static/listings/diploma/colorlib-regform-18/images/bg-registration-form-2.jpg';">
+  <div class="inner">
+    <form>
+      <button type="submit" formaction="{% url 'add_diploma' %}">Add New Diploma</button>
+    </form>
+    <h1>Your Diploma</h1>
+    <ul>
+      {% for diploma in diplomas%}
+      <li>{{diploma}}</li>
+      {%endfor%}
+    </ul>
+  </div>
 </div>
 {% endblock %}
