@@ -1,102 +1,115 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services Section</title>
-    <!-- Font Awesome CDN-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="{% static 'listings/service.css'%}" />
-  </head>
-  <body>
-    <section>
-      <div class="row">
-        <h1 class="section-heading">Our Services</h1>
-      </div>
-      <br><br>
-      <div class="row">
-        <div class="column">
-          <div class="card">
-            <div class="icon-wrapper">
-              <i class="fas fa-hammer"></i>
-            </div>
-            <h3>Service Heading</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-              consequatur necessitatibus eaque.
-            </p>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services Section</title>
+  <!-- Font Awesome CDN-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{% static 'listings/service.css'%}" />
+</head>
+
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="{% url 'home'%}">Home</a>
+      <a href="{% url 'service' %}">Services</a>
+      <a href="{% url 'check_diploma' %}">Check Diploma Number</a>
+
+
+      {% if user.is_authenticated %}
+      <a href="{% url 'info_diploma' %}">New diploma</a>
+      <a href="{% url 'logout' %}">Log Out</a>
+      {% else %}
+      <a href="{% url 'login' %}">Log In</a>
+      <a href="{% url 'register' %}">Register</a>
+      {% endif %}
+    </nav>
+  </header>
+  <section>
+    <div class="row">
+      <h1 class="section-heading">Our Services</h1>
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fas fa-hammer"></i>
           </div>
-        </div>
-        <div class="column">
-          <div class="card">
-            <div class="icon-wrapper">
-              <i class="fas fa-brush"></i>
-            </div>
-            <h3>Service Heading</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-              consequatur necessitatibus eaque.
-            </p>
-          </div>
-        </div>
-        <div class="column">
-          <div class="card">
-            <div class="icon-wrapper">
-              <i class="fas fa-wrench"></i>
-            </div>
-            <h3>Service Heading</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-              consequatur necessitatibus eaque.
-            </p>
-          </div>
-        </div>
-        <div class="column">
-          <div class="card">
-            <div class="icon-wrapper">
-              <i class="fas fa-truck-pickup"></i>
-            </div>
-            <h3>Service Heading</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-              consequatur necessitatibus eaque.
-            </p>
-          </div>
-        </div>
-        <div class="column">
-          <div class="card">
-            <div class="icon-wrapper">
-              <i class="fas fa-broom"></i>
-            </div>
-            <h3>Service Heading</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-              consequatur necessitatibus eaque.
-            </p>
-          </div>
-        </div>
-        <div class="column">
-          <div class="card">
-            <div class="icon-wrapper">
-              <i class="fas fa-plug"></i>
-            </div>
-            <h3>Service Heading</h3>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-              consequatur necessitatibus eaque.
-            </p>
-          </div>
+          <h3>Service Heading</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
+            consequatur necessitatibus eaque.
+          </p>
         </div>
       </div>
-    </section>
-  </body>
+      <div class="column">
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fas fa-brush"></i>
+          </div>
+          <h3>Service Heading</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
+            consequatur necessitatibus eaque.
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fas fa-wrench"></i>
+          </div>
+          <h3>Service Heading</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
+            consequatur necessitatibus eaque.
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fas fa-truck-pickup"></i>
+          </div>
+          <h3>Service Heading</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
+            consequatur necessitatibus eaque.
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fas fa-broom"></i>
+          </div>
+          <h3>Service Heading</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
+            consequatur necessitatibus eaque.
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fas fa-plug"></i>
+          </div>
+          <h3>Service Heading</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
+            consequatur necessitatibus eaque.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
 </html>

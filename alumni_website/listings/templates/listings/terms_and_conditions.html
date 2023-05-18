@@ -11,6 +11,22 @@
 </head>
 
 <body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="{% url 'home'%}">Home</a>
+      <a href="{% url 'service' %}">Services</a>
+      <a href="{% url 'check_diploma' %}">Check Diploma Number</a>
+
+
+      {% if user.is_authenticated %}
+      <a href="{% url 'info_diploma' %}">New diploma</a>
+      <a href="{% url 'logout' %}">Log Out</a>
+      {% else %}
+      <a href="{% url 'login' %}">Log In</a>
+      <a href="{% url 'register' %}">Register</a>
+      {% endif %}
+    </nav>
+  </header>
   <section id="terms-of-service">
     <div class="card">
       <h1 class="primary-heading">Terms of Service</h1>

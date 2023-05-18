@@ -71,9 +71,15 @@ def set_information(request):
     return redirect('url login')
 
 
-def diploma_number(request):
+def add_diploma(request):
     form = DiplomaNumberForm()
     return render(request, "listings/diploma_number.html",{'form',form})
+
+def info_diploma(request):
+    return render(request, "listings/diploma-info.html",{})
+
+def check_diploma(request):
+    return render(request, "listings/check_diploma.html",{})
 
 
 def terms_and_conditions(request):
@@ -81,6 +87,8 @@ def terms_and_conditions(request):
         "title": "Terms and Conditions",
     })
 
+def contact(request):
+    return render(request, "listings/contact.html")
 
 def service(request):
     return render(request, "listings/service.html")

@@ -20,7 +20,8 @@
 
 }
 
-body,html {
+body,
+html {
 
     width: 100%;
     min-height: 100%;
@@ -96,7 +97,7 @@ a:hover {
 .card {
     margin-top: 100px;
     margin-bottom: 100px;
-    height : 1250px;
+    height: 1250px;
     width: 1200px;
     border-radius: 30px;
     background-color: #333541;
@@ -109,7 +110,7 @@ a:hover {
     text-align: center;
     font-family: josefin sans;
     color: white;
-    padding-top: 50px ;
+    padding-top: 50px;
     font-size: 4em;
 }
 
@@ -142,7 +143,7 @@ a:hover {
     .card {
         margin-top: 100px;
         margin-bottom: 100px;
-        height : 2050px;
+        height: 2050px;
         width: 1000px;
         border-radius: 30px;
         background-color: #333541;
@@ -155,7 +156,7 @@ a:hover {
     .card {
         margin-top: 100px;
         margin-bottom: 100px;
-        height : 2350px;
+        height: 2350px;
         width: 800px;
         border-radius: 30px;
         background-color: #333541;
@@ -168,13 +169,14 @@ a:hover {
     .card {
         margin-top: 100px;
         margin-bottom: 100px;
-        height : 2950px;
+        height: 2950px;
         width: 600px;
         border-radius: 30px;
         background-color: #333541;
         margin-left: auto;
         margin-right: auto;
     }
+
     .card .primary-heading {
         font-size: 3.5em;
     }
@@ -188,7 +190,7 @@ a:hover {
     .card {
         margin-top: 100px;
         margin-bottom: 100px;
-        height : 3850px;
+        height: 3850px;
         width: 450px;
         border-radius: 30px;
         background-color: #333541;
@@ -213,7 +215,7 @@ a:hover {
     .card {
         margin-top: 100px;
         margin-bottom: 100px;
-        height : 5050px;
+        height: 5050px;
         width: 350px;
         border-radius: 30px;
         background-color: #333541;
@@ -230,7 +232,7 @@ a:hover {
     .card {
         margin-top: 100px;
         margin-bottom: 100px;
-        height : 6300px;
+        height: 6300px;
         width: 290px;
         border-radius: 30px;
         background-color: #333541;
@@ -241,4 +243,45 @@ a:hover {
     .card .primary-heading {
         font-size: 2em;
     }
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 12.5%;
+    background: lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 16px;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 30px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #e4e4e4;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s;
+}
+
+.navbar a:hover::after {
+    transform: translateY(0);
+    opacity: 1;
 }
