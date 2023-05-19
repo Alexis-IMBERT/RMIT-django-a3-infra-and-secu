@@ -1,22 +1,21 @@
 {% extends 'listings/base_diploma.html' %}
+{% load widget_tweaks %}
 {% block content %}
 <div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg');">
 	<div class="inner">
-		<form action="">
+		<form action="" method="post">
+			{% csrf_token %}
 			<h3>Generate Diploma Certificate</h3>
 
+			{% for field in form %}
 			<div class="form-wrapper">
-				<label for="">Enter Diploma Number</label>
-				<input type="text" class="form-control">
+				{{field.label_tag}}
+				{{field|add_class:"form-control"}}
+				{{field.errors}}
 			</div>
+			{% endfor %}
 
-			<div class="form-wrapper">
-				<label for="">Enter UserName</label>
-				<input type="text" class="form-control">
-			</div>
-
-
-			<button>Generate</button>
+			<button type="submit">Check Validity</button>
 		</form>
 	</div>
 </div>

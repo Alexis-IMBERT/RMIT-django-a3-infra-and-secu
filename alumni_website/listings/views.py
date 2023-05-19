@@ -9,6 +9,7 @@ from django.contrib.auth import login, authenticate, logout, forms
 
 from .forms import DiplomaNumberForm
 from .forms import UserRegisterForm
+from .forms import CheckDiplomaNumberForm
 
 from .models import DiplomaNumber
 
@@ -118,7 +119,21 @@ def info_diploma(request):
 
 
 def check_diploma(request):
-    return render(request, "listings/diploma-check.html", {})
+    if request.method == 'POST':
+        form = CheckDiplomaNumberForm(request.POST)
+        valid = form.is_valid()
+        if valid:
+            try:
+                form.check()
+            except CheckDiplomaNumberForm.NumberDoesNotExist:
+                
+                pass
+            except CheckDiplomaNumberForm.NameDoesNotMatch:
+                pass
+            pass
+    else:
+        form = CheckDiplomaNumberForm()
+    return render(request, "listings/diploma-check.html", {"form":form})
 
 
 def terms_and_conditions(request):
