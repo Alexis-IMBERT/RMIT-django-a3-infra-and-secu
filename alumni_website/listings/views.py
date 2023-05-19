@@ -10,6 +10,15 @@ from django.contrib.auth import login, authenticate, logout, forms
 from .forms import DiplomaNumberForm
 from .forms import UserRegisterForm
 
+from .models import DiplomaNumber
+
+from .utils import get_current_year, generate_diploma_number
+
+
+def get_user(request) -> User:
+    """Return a user"""
+    return User.objects.get(id=request.session["_auth_user_id"])
+
 
 def hello(request):
     # alumnis = Alumni.objects.all()
@@ -36,7 +45,7 @@ def login_view(request):
     if request.method == "POST":
         form = forms.AuthenticationForm(request=request)
 
-        email = request.POST["email"]
+        email = request.POST["username"]
         password = request.POST["password"]
         user = authenticate(username=email, password=password)
         if user is not None:
@@ -73,13 +82,40 @@ def register_view(request):
 
 @login_required()
 def add_diploma(request):
-    form = DiplomaNumberForm()
+    if request.method == "POST":
+        form = DiplomaNumberForm(request.POST)
+        if form.is_valid():
+            year = request.POST.get("year")
+            programe_name = request.POST.get("programe_name")
+            user = get_user(request=request)
+            diploma_number = generate_diploma_number(year)
+
+            diplome = DiplomaNumber(
+                diploma_number=diploma_number,
+                user=user,
+                year=year,
+                programe_name=programe_name,
+            )
+            diplome.save()
+            return redirect("info_diploma")
+    else:
+        year = get_current_year()
+        values = {
+            "year": year,
+        }
+        form = DiplomaNumberForm(values)
+
     return render(request, "listings/diploma-add.html", {"form": form})
 
 
 @login_required()
 def info_diploma(request):
-    return render(request, "listings/diploma-info.html", {})
+    user = get_user(request=request)
+    print(user.first_name)
+    # diplomes = DiplomaNumber.objects.filter(username=user)
+    diplomes = DiplomaNumber.objects.all()
+    print(diplomes)
+    return render(request, "listings/diploma-info.html", {"diplomes": diplomes})
 
 
 def check_diploma(request):

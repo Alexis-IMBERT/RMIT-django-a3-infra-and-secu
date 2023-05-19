@@ -4,12 +4,16 @@ from django.forms import ModelForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import DiplomaNumber
-
+from .utils import get_current_year
 
 class UserRegisterForm(UserCreationForm):
     """Class for the registration form"""
 
-    first_name = forms.CharField(label="First Name", strip=True, required=True)
+    first_name = forms.CharField(
+        label="First Name",
+        strip=True,
+        required=True,
+    )
     last_name = forms.CharField(label="Last Name", strip=True, required=True)
     username = forms.EmailField(label="Email", required=True)
 

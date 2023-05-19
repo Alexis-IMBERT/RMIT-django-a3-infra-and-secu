@@ -1,27 +1,24 @@
 {% extends 'listings/base_diploma.html' %}
+{% load widget_tweaks %}
 {% block content %}
 <div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg');">
 	<div class="inner">
-		<form action="">
+		<form action="" method="post">
+			{% csrf_token %}
 			<h3>Enter Diploma Information</h3>
 
-			<div class="form-wrapper">
-				<label for="">Program Name</label>
-				<input type="text" class="form-control">
-			</div>
 
+			{% for field in form %}
 			<div class="form-wrapper">
-				<label for="">Year</label>
-				<input type="date" class="form-control">
+				{{field.label_tag}}
+				{{field|add_class:"form-control"}}
+				{{field.errors}}
 			</div>
+			{% endfor %}
+
 			<div class="form-wrapper">
 				<label for="">Phone Number</label>
 				<input type="tel" id="phone" name="phone" placeholder="Phone number" class="form-control">
-			</div>
-			<div class="form-wrapper">
-				<label for="">Diploma Number</label>
-				<input type="text" class="form-control">
-
 			</div>
 			<div class="checkbox">
 				<label>
@@ -29,7 +26,7 @@
 					<span class="checkmark"></span>
 				</label>
 			</div>
-			<button>Confirm</button>
+			<button type="submit">Confirm</button>
 		</form>
 	</div>
 </div>
