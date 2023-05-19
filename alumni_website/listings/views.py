@@ -126,11 +126,12 @@ def check_diploma(request):
             try:
                 form.check()
             except CheckDiplomaNumberForm.NumberDoesNotExist:
-                
-                pass
+                data = {"number_not_exist":True}
             except CheckDiplomaNumberForm.NameDoesNotMatch:
-                pass
-            pass
+                data = {"name_not_match":True}
+            else:
+                data = {}
+            return render(request, "listings/diploma-resultat.html",data)
     else:
         form = CheckDiplomaNumberForm()
     return render(request, "listings/diploma-check.html", {"form":form})

@@ -61,7 +61,8 @@ class CheckDiplomaNumberForm(forms.Form):
         diploma_first_name = diploma.user.first_name
         diploma_last_name = diploma.user.last_name
 
+        print(form_first_name != diploma_first_name or form_last_name != diploma_last_name)
         if form_first_name != diploma_first_name or form_last_name != diploma_last_name:
-            return self.NameDoesNotMatch()
+            raise self.NameDoesNotMatch()
 
         return True
