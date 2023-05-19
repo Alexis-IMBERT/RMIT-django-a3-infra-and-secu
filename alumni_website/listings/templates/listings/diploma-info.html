@@ -9,7 +9,7 @@
     <h1>Your Diploma</h1>
     <ul>
       {% for diploma in diplomes%}
-      <li>{{diploma}}</li>
+      <li>{{diploma.programe_name}} - {{diploma.year}} - {{diploma.diploma_number}} </li>
       {%endfor%}
     </ul>
   </div>

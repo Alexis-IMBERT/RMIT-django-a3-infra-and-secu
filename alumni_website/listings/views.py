@@ -114,7 +114,6 @@ def info_diploma(request):
     print(user.first_name)
     # diplomes = DiplomaNumber.objects.filter(username=user)
     diplomes = DiplomaNumber.objects.all()
-    print(diplomes)
     return render(request, "listings/diploma-info.html", {"diplomes": diplomes})
 
 
