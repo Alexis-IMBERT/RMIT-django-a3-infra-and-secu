@@ -28,6 +28,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "3.208.19.101",
     "ec2-3-208-19-101.compute-1.amazonaws.com",
+    "0.0.0.0",
 ]
 
 
@@ -121,6 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
