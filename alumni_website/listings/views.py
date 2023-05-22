@@ -32,7 +32,7 @@ def home(request):
         request,
         "listings/home.html",
         {
-            "title": "Website With Login & Registration Form Remitly",
+            "title": "Website With Login & Registration Form RMIT",
         },
     )
 
