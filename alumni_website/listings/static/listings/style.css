@@ -93,7 +93,7 @@ body {
 
 .background {
     width: 100%;
-    height: 100vh;
+    height: 140vh;
     background: url('images/background.jpg') no-repeat;
     background-size: cover;
     background-position: center;
@@ -101,11 +101,11 @@ body {
 }
 
 .container {
-    position: absolute;
+    position:absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding-top: 400px;
+    padding-top: 600px;
     width: 75%;
     height: 550px;
     background: url("images/background.jpg") no-repeat;

@@ -1,16 +1,15 @@
 {% extends 'listings/base.html' %}
 {% block content %}
 <div class="background"></div>
-<div class="container">
-    <div class="content">
+<div class="container" style="height: 100px;">
+    <div class="content" style="margin-bottom: 100px;>
         <h2 class="logo">
             <i class='bx bxl-firebase'></i>
             RMIT
         </h2>
         <div class="text-sci">
             <h2 style="padding-bottom: 20px;">Welcome!<br></h2>
-            <h2><span>To Our New website.</span></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, unde.</p>
+            <h2><span>To Alumni.</span></h2>
 
             {% if user.is_authenticated %}
             <p>Hi {{user.first_name}} </p>
