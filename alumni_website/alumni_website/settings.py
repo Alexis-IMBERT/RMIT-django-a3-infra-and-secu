@@ -26,14 +26,10 @@ SECRET_KEY = "oys!ciUC%L2M%#oLzft4#f&p@#!LAV$5gj$tQ#@$~7L@uSUJT5XpUnJp^C*F"
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "54.196.160.148",
-    "ec2-54-196-160-148.compute-1.amazonaws.com/",
-    "ec2-54-196-160-148.compute-1.amazonaws.com"
     "54.167.103.229",
     "ec2-54-167-103-229.compute-1.amazonaws.com",
-    "0.0.0.0",
-    "localhost",
     "127.0.0.1",
+    "localhost",
 ]
 
 
